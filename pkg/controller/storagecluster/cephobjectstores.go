@@ -106,8 +106,13 @@ func (r *ReconcileStorageCluster) newCephObjectStoreInstances(initData *ocsv1.St
 				},
 				Gateway: cephv1.GatewaySpec{
 					Port:      80,
+<<<<<<< HEAD
 					Instances: 2,
 					Placement: getPlacement(initData, "rgw"),
+=======
+					Instances: 1,
+					Placement: defaults.DaemonPlacements["rgw"],
+>>>>>>> Reduce the number of RGWs back 1
 					Resources: defaults.GetDaemonResources("rgw", initData.Spec.Resources),
 				},
 			},
